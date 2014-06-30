@@ -1,2 +1,3 @@
 <%= @user.email %>
+<%= button_to "Follow #{@user.email}", [@user, :following_relationship] %>
 <%= render @shouts %>
