@@ -1,0 +1,7 @@
+<div>
+  <%= link_to current_user.email, current_user %>
+  <%= form_for @shout do |form| %>
+    <%= form.text_area :body, placeholder: "Shout it here" %>
+    <%= form.submit %>
+  <% end %>
+</div>
