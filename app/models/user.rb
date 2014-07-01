@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :followers,
     through: :follower_relationships
 
+
   def follow(other_user)
     followed_users << other_user
   end

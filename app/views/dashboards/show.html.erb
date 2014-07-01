@@ -1,7 +1,9 @@
 <div>
-  <%= link_to current_user.email, current_user %>
-  <%= link_to "See who you're following", :following %>
-  <%= link_to "See who's following you", :followers %>
+  See all of your shouts <%= link_to current_user.email, current_user %>
+  <ul>
+    <li><%= link_to "See who you're following", :following %></li>
+    <li><%= link_to "See who's following you", :followers %></li>
+  </ul>
   <%= form_for @shout do |form| %>
     <%= form.text_area :body, placeholder: "Shout it here" %>
     <%= form.submit %>
