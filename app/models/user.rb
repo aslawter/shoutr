@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
     followed_users << other_user
   end
 
-  def following?(user)
-    followed_users.include?(user)
+  def following?(other_user)
+    followed_user_ids.include?(other_user.id)
   end
 
-  def unfollow(user)
-    followed_users.destroy(user)
+  def unfollow(other_user)
+    followed_users.destroy(other_user)
   end
 end
