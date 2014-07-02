@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :username
+#  extend FriendlyId
+#  friendly_id :username
 
   has_many :shouts
 
