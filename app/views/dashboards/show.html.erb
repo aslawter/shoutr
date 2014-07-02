@@ -4,8 +4,8 @@
     <li><%= link_to "See who you're following", :following %></li>
     <li><%= link_to "See who's following you", :followers %></li>
   </ul>
-  <%= form_for @shout do |form| %>
+  <%= form_for @text_subject do |form| %>
     <%= form.text_area :body, placeholder: "Shout it here" %>
-    <%= form.submit %>
+    <%= form.submit "Shout it out!" %>
   <% end %>
 </div>
