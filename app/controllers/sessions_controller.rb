@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = authenticate_session(session_params)
+    user = authenticate_session(session_params, floomp: [:username])
 
     if sign_in(user)
       redirect_to root_path
