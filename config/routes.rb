@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :shouts, only: [:create]
   resources :text_subjects, only: [:create]
+  resources :image_subjects, only: [:create]
 
   constraints Monban::Constraints::SignedIn.new do
     get "/", to: "dashboards#show", as: :dashboard
