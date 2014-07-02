@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :followers,
     through: :follower_relationships
 
+  validates :email, uniqueness: true
 
   def follow(other_user)
     followed_users << other_user

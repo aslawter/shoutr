@@ -8,6 +8,12 @@
     <%= form.text_area :body, placeholder: "Shout it here" %>
     <%= form.submit "Shout it out!" %>
   <% end %>
+</div> 
+<div>
+  <%= form_for @image_subject do |form| %>
+    <%= form.url_field :url, placeholder: "Copy an image url here" %>
+    <%= form.submit "Shout it out!" %>
+  <% end %>
 </div>
 
 <div>
