@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :username
+
   has_many :shouts
 
   has_many :followed_user_relationships,
