@@ -1,4 +1,4 @@
-class BackfillUsernameInUsers < ActviveRecord::Migration
+class BackfillUsernameInUsers < ActiveRecord::Migration
   class User < ActiveRecord::Migration
   end
 
