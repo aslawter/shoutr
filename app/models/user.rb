@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-#  extend FriendlyId
-#  friendly_id :username
+  def to_param
+    username
+  end 
 
   has_many :shouts
 
@@ -18,7 +19,7 @@ class User < ActiveRecord::Base
   has_many :followers,
     through: :follower_relationships
 
-  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 
   def follow(other_user)
     followed_users << other_user
