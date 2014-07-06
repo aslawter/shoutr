@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+  paginates_per 5
+
   def to_param
     username
-  end 
+  end
 
   has_many :shouts
 
@@ -20,6 +22,10 @@ class User < ActiveRecord::Base
     through: :follower_relationships
 
   validates :username, uniqueness: true
+
+  def timeline
+    Shout.where(user_id: followed_users).order(created_at: :desc)
+  end
 
   def follow(other_user)
     followed_users << other_user

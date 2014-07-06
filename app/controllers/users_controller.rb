@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:show, :new, :create]
+  def index
+    @users = User.all
+  end
 
   def show
     @user = User.find_by(username: params[:username])
-    @shouts = @user.shouts 
+    @shouts = @user.shouts.page(params[:page])
+
   end
 
   def new
